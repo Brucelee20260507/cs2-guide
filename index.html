@@ -1,387 +1,177 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS2 Beginner Guide | 多国语言CS2攻略站</title>
-    <meta name="keywords" content="CS2,CS2攻略,CS2 guide,CS2 crosshair,CS2 slang,CS2教程,multi-language CS2">
-    <meta name="description" content="Global multi-language CS2 beginner guide, crosshair codes, slang translator, map spots and aim training plan.">
-    <meta name="author" content="CS2 Global Guide">
-    <meta name="robots" content="index,follow">
-    <link rel="canonical" href="">
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Microsoft YaHei,Roboto,sans-serif}
-        html[lang="ar"] *{font-family:Arial,sans-serif;direction:rtl}
-        ::-webkit-scrollbar{width:8px;background:#111}
-        ::-webkit-scrollbar-thumb{background:#00b4ff;border-radius:4px}
-        body{background:#121212;color:#e0e0e0;line-height:1.85}
-        .container{max-width:1300px;margin:0 auto;padding:0 20px}
-        html[lang="ar"] .container{direction:ltr}
-        a{text-decoration:none;color:inherit}
-        .btn{display:inline-block;background:linear-gradient(90deg,#00b4ff,#0088cc);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;transition:.3s;border:none;cursor:pointer}
-        .btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,180,255,.3)}
-        .section-title{font-size:32px;margin-bottom:30px;color:#fff;border-left:6px solid #00b4ff;padding-left:16px;font-weight:700}
-        html[lang="ar"] .section-title{border-left:none;border-right:6px solid #00b4ff;padding-left:0;padding-right:16px}
-        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:24px;margin-top:20px}
-        .card{background:linear-gradient(145deg,#1b1e25,#15181e);border-radius:14px;padding:28px;border:1px solid #333;transition:.35s;position:relative;overflow:hidden}
-        .card:before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,#00b4ff,#00ffcc);opacity:.7}
-        .card h3{color:#00b4ff;font-size:23px;margin-bottom:14px}
-        .card p,.card li{margin-bottom:10px;font-size:15px}
-        .tip{background:#242a33;border-left:5px solid #ffc107;padding:16px;border-radius:8px;margin:16px 0;color:#ffecb3}
-        html[lang="ar"] .tip{border-left:none;border-right:5px solid #ffc107}
-        .ad{background:#1a1d24;border:1px dashed #444;text-align:center;padding:20px;border-radius:10px;margin:30px 0;color:#aaa}
-        header{background:#1a1d24;position:sticky;top:0;z-index:1000;border-bottom:3px solid #00b4ff;padding:16px 0;box-shadow:0 3px 15px rgba(0,0,0,.4)}
-        .nav-wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-        .logo{font-size:30px;font-weight:700;color:#00b4ff}
-        nav ul{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin-top:8px}
-        nav a{color:#fff;padding:9px 14px;border-radius:8px;font-size:15px;transition:.25s}
-        nav a:hover{background:#00b4ff;color:#000}
-        .lang-select{padding:6px 12px;background:#00b4ff;color:#000;border-radius:6px;border:none;cursor:pointer;font-weight:bold;margin-left:15px}
-        .hero{background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),url(https://img0.baidu.com/it/u=889646535,256470370&fm=253&fmt=auto&app=138&f=JPEG?w=1200&h=675);background-size:cover;background-position:center;padding:120px 0;text-align:center}
-        .hero h1{font-size:46px;margin-bottom:20px;color:#fff}
-        .hero p{font-size:20px;max-width:800px;margin:0 auto 28px}
-        .video-wrap{position:relative;width:100%;height:0;padding-bottom:56.25%;border-radius:12px;overflow:hidden;margin:20px 0;box-shadow:0 10px 25px rgba(0,0,0,.4)}
-        .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}
-        .translator{background:linear-gradient(145deg,#1b1e25,#15181e);padding:35px;border-radius:14px;margin:40px 0;border:1px solid #333}
-        .translator input{width:100%;padding:16px;background:#252a33;border:none;border-radius:10px;color:#fff;font-size:16px;outline:none;border:1px solid #444}
-        .translator .result{padding:18px;background:#242a33;border-radius:10px;margin-top:16px;min-height:60px;font-size:16px}
-        .search{margin:30px 0;text-align:center}
-        .search input{width:90%;max-width:700px;padding:14px;background:#1e1e1f;border:1px solid #444;border-radius:10px;color:#fff;font-size:16px;outline:none}
-        .copy-btn{background:#00b4ff;color:#000;border:none;padding:6px 12px;border-radius:6px;margin-left:10px;cursor:pointer}
-        .gotop{position:fixed;right:20px;bottom:20px;background:#00b4ff;color:#000;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;display:none;z-index:999}
-        .comment{background:#1e1e1f;padding:30px;border-radius:12px;margin:40px 0;border:1px solid #333}
-        .comment iframe{width:100%;border-radius:8px}
-        footer{background:#1a1d24;text-align:center;padding:45px 0;margin-top:60px;border-top:2px solid #00b4ff;color:#aaa}
-        .lang{display:none;}
-        .lang.visible{display:block;}
-        @media(max-width:768px){.hero h1{font-size:30px}.grid{grid-template-columns:1fr}.nav-wrap{justify-content:center}nav ul{justify-content:center}}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS2 新手攻略屋 | Bruce 原创</title>
+<meta name="keywords" content="CS2,CS2攻略,CS2新手,CS2准星,CS2术语">
+<meta name="description" content="CS2 新手攻略屋，Bruce 原创版权所有，多语言 CS2 指南。">
+<meta name="author" content="Bruce">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,"Microsoft YaHei",sans-serif}
+body{background:#121212;color:#e0e0e0;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#1a1d24;border-bottom:3px solid #00b4ff;position:sticky;top:0;z-index:999;padding:16px 0}
+.logo{font-size:26px;font-weight:700;color:#00b4ff}
+.nav-wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+nav ul{display:flex;flex-wrap:wrap;gap:10px;list-style:none}
+nav a{color:#fff;padding:8px 12px;border-radius:6px}
+nav a:hover{background:#00b4ff;color:#000}
+.lang-select{padding:6px 10px;background:#00b4ff;color:#000;border:none;border-radius:6px;margin-left:10px}
+.hero{background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url(https://img0.baidu.com/it/u=889646535,256470370);background-size:cover;background-position:center;padding:80px 0;text-align:center}
+.hero h1{font-size:36px;color:#fff;margin-bottom:16px}
+.section-title{font-size:24px;color:#00b4ff;border-left:4px solid #00b4ff;padding-left:12px;margin:30px 0 20px}
+.card{background:#1e1e1f;border-radius:10px;padding:20px;margin-bottom:20px}
+.ad{background:#1a1d24;border:1px dashed #444;text-align:center;padding:16px;margin:20px 0;color:#aaa}
+.lang{display:none}
+.lang.visible{display:block}
+.gotop{position:fixed;right:20px;bottom:20px;background:#00b4ff;color:#000;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;display:none}
+footer{background:#1a1d24;text-align:center;padding:30px;margin-top:40px;border-top:2px solid #00b4ff}
+.copy-btn{background:#00b4ff;color:#000;border:none;padding:6px 10px;border-radius:6px;margin-left:10px;cursor:pointer}
+.search input{width:100%;max-width:600px;padding:12px;background:#222;color:#fff;border:1px solid #444;border-radius:8px;display:block;margin:20px auto}
+.translator{background:#1e1e1f;padding:20px;border-radius:10px;margin:20px 0}
+.translator input{width:100%;padding:12px;background:#252a33;color:#fff;border:none;border-radius:8px}
+.result{margin-top:12px;padding:12px;background:#252a33;border-radius:8px}
+code{background:#222;padding:10px;display:block;border-radius:6px;margin:10px 0;overflow-x:auto}
+@media(max-width:768px){.nav-wrap{justify-content:center}.hero h1{font-size:26px}}
+</style>
 </head>
-<body oncontextmenu="return false;" onselectstart="return false;" oncopy="return false;" oncut="return false;">
+<body oncontextmenu="return false" oncopy="return false">
 
 <header>
-    <div class="container nav-wrap">
-        <div class="logo">
-            <span class="lang zh visible">CS2 新手攻略站</span>
-            <span class="lang zh-TW">CS2 新手攻略站</span>
-            <span class="lang en">CS2 Beginner Guide</span>
-            <span class="lang ja">CS2 初心者ガイド</span>
-            <span class="lang ko">CS2 초보 가이드</span>
-            <span class="lang es">Guía para Principiantes CS2</span>
-            <span class="lang fr">Guide Débutant CS2</span>
-            <span class="lang de">CS2 Anfängerleitfaden</span>
-            <span class="lang ru">Руководство для новичков CS2</span>
-            <span class="lang ar">دليل المبتدئين CS2</span>
-        </div>
-        <div style="display:flex;align-items:center;">
-            <nav>
-                <ul>
-                    <li><a href="#start" class="lang zh visible">快速上手</a><a href="#start" class="lang zh-TW">快速上手</a><a href="#start" class="lang en">Quick Start</a><a href="#start" class="lang ja">クイックスタート</a><a href="#start" class="lang ko">빠른 시작</a><a href="#start" class="lang es">Inicio Rápido</a><a href="#start" class="lang fr">Démarrage Rapide</a><a href="#start" class="lang de">Schnellstart</a><a href="#start" class="lang ru">Быстрый старт</a><a href="#start" class="lang ar">بداية سريعة</a></li>
-                    <li><a href="#setting" class="lang zh visible">操作设置</a><a href="#setting" class="lang zh-TW">操作設定</a><a href="#setting" class="lang en">Settings</a><a href="#setting" class="lang ja">設定</a><a href="#setting" class="lang ko">설정</a><a href="#setting" class="lang es">Configuración</a><a href="#setting" class="lang fr">Paramètres</a><a href="#setting" class="lang de">Einstellungen</a><a href="#setting" class="lang ru">Настройки</a><a href="#setting" class="lang ar">الإعدادات</a></li>
-                    <li><a href="#trans" class="lang zh visible">术语翻译器</a><a href="#trans" class="lang zh-TW">術語翻譯器</a><a href="#trans" class="lang en">Slang Translator</a><a href="#trans" class="lang ja">スラング翻訳</a><a href="#trans" class="lang ko">슬랭 번역기</a><a href="#trans" class="lang es">Traductor de Jerga</a><a href="#trans" class="lang fr">Traducteur d'Argot</a><a href="#trans" class="lang de">Slang-Übersetzer</a><a href="#trans" class="lang ru">Переводчик сленга</a><a href="#trans" class="lang ar">مترجم المصطلحات</a></li>
-                    <li><a href="#crosshair" class="lang zh visible">准星代码</a><a href="#crosshair" class="lang zh-TW">準星代碼</a><a href="#crosshair" class="lang en">Crosshair</a><a href="#crosshair" class="lang ja">クロスヘア</a><a href="#crosshair" class="lang ko">조준선 코드</a><a href="#crosshair" class="lang es">Punto de Mira</a><a href="#crosshair" class="lang fr">Réticule</a><a href="#crosshair" class="lang de">Fadenkreuz</a><a href="#crosshair" class="lang ru">Прицел</a><a href="#crosshair" class="lang ar">نقطة التصويب</a></li>
-                    <li><a href="#map" class="lang zh visible">地图教学</a><a href="#map" class="lang zh-TW">地圖教學</a><a href="#map" class="lang en">Maps</a><a href="#map" class="lang ja">マップ解説</a><a href="#map" class="lang ko">지도 가이드</a><a href="#map" class="lang es">Mapas</a><a href="#map" class="lang fr">Cartes</a><a href="#map" class="lang de">Karten</a><a href="#map" class="lang ru">Карты</a><a href="#map" class="lang ar">الخرائط</a></li>
-                    <li><a href="#video" class="lang zh visible">视频教程</a><a href="#video" class="lang zh-TW">影片教學</a><a href="#video" class="lang en">Videos</a><a href="#video" class="lang ja">動画講座</a><a href="#video" class="lang ko">영상 튜토리얼</a><a href="#video" class="lang es">Videos</a><a href="#video" class="lang fr">Vidéos</a><a href="#video" class="lang de">Videos</a><a href="#video" class="lang ru">Видео</a><a href="#video" class="lang ar">فيديوهات</a></li>
-                    <li><a href="#train" class="lang zh visible">练枪计划</a><a href="#train" class="lang zh-TW">練槍計畫</a><a href="#train" class="lang en">Aim Plan</a><a href="#train" class="lang ja">エイム練習</a><a href="#train" class="lang ko">조준 훈련</a><a href="#train" class="lang es">Plan de Entrenamiento</a><a href="#train" class="lang fr">Plan d'Entraînement</a><a href="#train" class="lang de">Trainingsplan</a><a href="#train" class="lang ru">План тренировки</a><a href="#train" class="lang ar">خطة تدريب</a></li>
-                </ul>
-            </nav>
-            <select class="lang-select" id="langSelect">
-                <option value="zh">简体中文</option>
-                <option value="zh-TW">繁體中文</option>
-                <option value="en">English</option>
-                <option value="ja">日本語</option>
-                <option value="ko">한국어</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
-                <option value="ru">Русский</option>
-                <option value="ar">العربية</option>
-            </select>
-        </div>
-    </div>
+<div class="container nav-wrap">
+<div class="logo">
+<span class="lang zh visible">CS2 新手攻略屋</span>
+<span class="lang en">CS2 Beginner House</span>
+</div>
+<nav>
+<ul>
+<li><a href="#start" class="lang zh visible">快速上手</a><a href="#start" class="lang en">Start</a></li>
+<li><a href="#trans" class="lang zh visible">术语翻译器</a><a href="#trans" class="lang en">Translator</a></li>
+<li><a href="#crosshair" class="lang zh visible">准星代码</a><a href="#crosshair" class="lang en">Crosshair</a></li>
+</ul>
+<select id="langSelect" class="lang-select">
+<option value="zh">简体中文</option>
+<option value="en">English</option>
+</select>
+</nav>
+</div>
 </header>
 
 <div class="hero">
-    <div class="container">
-        <h1 class="lang zh visible">CS2 新手一站式攻略平台</h1>
-        <h1 class="lang zh-TW">CS2 新手一站式攻略平台</h1>
-        <h1 class="lang en">All-In-One CS2 Guide</h1>
-        <h1 class="lang ja">CS2 総合初心者ガイド</h1>
-        <h1 class="lang ko">통합 CS2 초보 가이드</h1>
-        <h1 class="lang es">Guía Completa de CS2</h1>
-        <h1 class="lang fr">Guide Complet CS2</h1>
-        <h1 class="lang de">Kompletter CS2-Guide</h1>
-        <h1 class="lang ru">Полное руководство CS2</h1>
-        <h1 class="lang ar">دليل شامل CS2</h1>
-
-        <p class="lang zh visible">入门教学｜术语翻译｜准星代码｜地图点位｜练枪计划｜视频教程，原创内容，侵权必究</p>
-        <p class="lang zh-TW">入門教學｜術語翻譯｜準星代碼｜地圖點位｜練槍計畫｜影片教學，原創內容，侵權必究</p>
-        <p class="lang en">Basic guide · Slang translator · Crosshair · Map spots · Aim plan · Video tutorials</p>
-        <p class="lang ja">基礎解説・スラング翻訳・クロスヘア・マップ・エイム練習・動画講座</p>
-        <p class="lang ko">기본 가이드·슬랭 번역·조준선·지도 포인트·조준 훈련·영상 강의</p>
-        <p class="lang es">Guía básica · Traductor de jerga · Mira · Puntos del mapa · Plan de entrenamiento</p>
-        <p class="lang fr">Guide basique · Traducteur d'argot · Réticule · Points de carte · Plan d'entraînement</p>
-        <p class="lang de">Grundguide · Slang-Übersetzer · Fadenkreuz · Kartenpunkte · Trainingsplan</p>
-        <p class="lang ru">Базовое руководство · Переводчик сленга · Прицел · Точки карт · План тренировки</p>
-        <p class="lang ar">دليل أساسي · مترجم مصطلحات · نقطة تصويب · مواقع الخرائط · خطة تدريب</p>
-
-        <a href="#trans" class="btn lang zh visible">立即使用术语翻译器</a>
-        <a href="#trans" class="btn lang zh-TW">立即使用術語翻譯器</a>
-        <a href="#trans" class="btn lang en">Open Slang Translator</a>
-        <a href="#trans" class="btn lang ja">スラング翻訳を開く</a>
-        <a href="#trans" class="btn lang ko">슬랭 번역기 열기</a>
-        <a href="#trans" class="btn lang es">Abrir Traductor</a>
-        <a href="#trans" class="btn lang fr">Ouvrir le Traducteur</a>
-        <a href="#trans" class="btn lang de">Slang-Übersetzer Öffnen</a>
-        <a href="#trans" class="btn lang ru">Открыть переводчик</a>
-        <a href="#trans" class="btn lang ar">فتح مترجم المصطلحات</a>
-    </div>
+<div class="container">
+<h1 class="lang zh visible">CS2 新手一站式攻略</h1>
+<h1 class="lang en">All-In-One CS2 Guide</h1>
+<p class="lang zh visible">Bruce 原创 版权所有</p>
+<p class="lang en">Original by Bruce, All Rights Reserved</p>
+</div>
 </div>
 
 <div class="search">
-    <input type="text" id="search" placeholder="Search / 搜索 / 検索 / 검색 / Buscar / Rechercher / Suchen / Поиск / بحث">
+<input type="text" id="search" placeholder="搜索 | Search">
 </div>
 
 <div class="container">
-    <div class="ad lang zh visible">官方广告位｜游戏推广｜外设合作｜加速器推广</div>
-    <div class="ad lang zh-TW">官方廣告位｜遊戲推廣｜外設合作｜加速器推廣</div>
-    <div class="ad lang en">Ad Zone | Game Promo / Peripherals / VPN</div>
-    <div class="ad lang ja">広告枠｜ゲーム・周辺機器・VPN</div>
-    <div class="ad lang ko">광고 영역 | 게임·주변기기·VPN</div>
-    <div class="ad lang es">Zona de Anuncios | Juegos / Periféricos / VPN</div>
-    <div class="ad lang fr">Espace Pub | Jeux / Périphériques / VPN</div>
-    <div class="ad lang de">Werbebereich | Spiele / Peripherie / VPN</div>
-    <div class="ad lang ru">Реклама | Игры / Периферия / VPN</div>
-    <div class="ad lang ar">مساحة إعلانية | ألعاب / ملحقات / VPN</div>
+<div class="ad lang zh visible">广告位 | 游戏推广</div>
+<div class="ad lang en">Ad Zone | Game Promotion</div>
 
-    <section id="start">
-        <div class="section-title lang zh visible">新手必看：5 分钟快速上手</div>
-        <div class="section-title lang zh-TW">新手必看：5 分鐘快速上手</div>
-        <div class="section-title lang en">5 Minutes Quick Start</div>
-        <div class="section-title lang ja">5分で初心者入門</div>
-        <div class="section-title lang ko">5분 빠른 시작 가이드</div>
-        <div class="section-title lang es">Inicio Rápido en 5 Minutos</div>
-        <div class="section-title lang fr">Démarrage en 5 Minutes</div>
-        <div class="section-title lang de">Schnellstart in 5 Minuten</div>
-        <div class="section-title lang ru">Быстрый старт за 5 минут</div>
-        <div class="section-title lang ar">بداية سريعة في 5 دقائق</div>
+<section id="start">
+<div class="section-title lang zh visible">快速上手</div>
+<div class="section-title lang en">Quick Start</div>
+<div class="card">
+<p class="lang zh visible">CS2 是 5v5 战术射击游戏，瞄准头部、先买甲、跟队友。</p>
+<p class="lang en">CS2 is 5v5 tactical shooter. Aim head, buy armor first.</p>
+</div>
+</section>
 
-        <div class="grid">
-            <div class="card">
-                <h3 class="lang zh visible">游戏核心规则</h3>
-                <h3 class="lang zh-TW">遊戲核心規則</h3>
-                <h3 class="lang en">Game Rules</h3>
-                <h3 class="lang ja">基本ルール</h3>
-                <h3 class="lang ko">게임 규칙</h3>
-                <h3 class="lang es">Reglas del Juego</h3>
-                <h3 class="lang fr">Règles du Jeu</h3>
-                <h3 class="lang de">Spielregeln</h3>
-                <h3 class="lang ru">Правила игры</h3>
-                <h3 class="lang ar">قواعد اللعبة</h3>
+<section id="trans">
+<div class="section-title lang zh visible">CS2 术语翻译器</div>
+<div class="section-title lang en">Slang Translator</div>
+<div class="translator">
+<input type="text" id="termInput" placeholder="输入术语 | Type slang">
+<div class="result" id="termResult">请输入 | Enter word</div>
+</div>
+</section>
 
-                <p class="lang zh visible">CS2 是 5v5 战术射击游戏，分为 T（进攻方）和 CT（防守方）</p>
-                <p class="lang zh-TW">CS2 是 5v5 戰術射擊遊戲，分為 T（進攻方）和 CT（防守方）</p>
-                <p class="lang en">CS2 is a 5v5 tactical shooter with T vs CT.</p>
-                <p class="lang ja">CS2は5v5戦術シューター、テロリスト対カウンターテロリスト</p>
-                <p class="lang ko">CS2는 5v5 전술 슈팅 게임, 대 테러리스트 vs 테러리스트</p>
-                <p class="lang es">CS2 es un shooter táctico 5v5, T vs CT.</p>
-                <p class="lang fr">CS2 est un jeu tactique 5v5, T contre CT.</p>
-                <p class="lang de">CS2 ist ein taktischer 5v5-Shooter, T vs CT.</p>
-                <p class="lang ru">CS2 — тактический шутер 5 на 5, Т против КТ.</p>
-                <p class="lang ar">CS2 لعبة إطلاق نار تكتيكية 5v5، فريق هجوم ضد دفاع.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="setting">
-        <div class="section-title lang zh visible">基础操作与最佳设置</div>
-        <div class="section-title lang zh-TW">基礎操作與最佳設定</div>
-        <div class="section-title lang en">Controls & Settings</div>
-        <div class="section-title lang ja">操作と推奨設定</div>
-        <div class="section-title lang ko">조작 및 추천 설정</div>
-        <div class="section-title lang es">Controles y Configuración</div>
-        <div class="section-title lang fr">Contrôles et Paramètres</div>
-        <div class="section-title lang de">Steuerung & Einstellungen</div>
-        <div class="section-title lang ru">Управление и настройки</div>
-        <div class="section-title lang ar">التحكم والإعدادات</div>
-    </section>
-
-    <section id="trans">
-        <div class="section-title lang zh visible">CS2 术语翻译器</div>
-        <div class="section-title lang zh-TW">CS2 術語翻譯器</div>
-        <div class="section-title lang en">CS2 Slang Translator</div>
-        <div class="section-title lang ja">CS2 スラング翻訳</div>
-        <div class="section-title lang ko">CS2 슬랭 번역기</div>
-        <div class="section-title lang es">Traductor de Jerga CS2</div>
-        <div class="section-title lang fr">Traducteur d'Argot CS2</div>
-        <div class="section-title lang de">CS2 Slang-Übersetzer</div>
-        <div class="section-title lang ru">Переводчик сленга CS2</div>
-        <div class="section-title lang ar">مترجم مصطلحات CS2</div>
-        <div class="translator">
-            <input type="text" id="termInput" placeholder="输入 CS2 术语 / Enter CS2 slang">
-            <div class="result" id="termResult">请输入术语 | Enter slang word</div>
-        </div>
-    </section>
-
-    <section id="crosshair">
-        <div class="section-title lang zh visible">CS2 准星代码</div>
-        <div class="section-title lang zh-TW">CS2 準星代碼</div>
-        <div class="section-title lang en">CS2 Crosshair Codes</div>
-        <div class="section-title lang ja">CS2 クロスヘアコード</div>
-        <div class="section-title lang ko">CS2 조준선 코드</div>
-        <div class="section-title lang es">Códigos de Mira CS2</div>
-        <div class="section-title lang fr">Codes de Réticule CS2</div>
-        <div class="section-title lang de">CS2 Fadenkreuz-Codes</div>
-        <div class="section-title lang ru">Коды прицела CS2</div>
-        <div class="section-title lang ar">أكواد نقطة التصويب CS2</div>
-        <div class="grid">
-            <div class="card">
-                <h3 class="lang zh visible">新手通用稳心准星</h3>
-                <h3 class="lang en">Beginner Crosshair</h3>
-                <code style="background:#222;padding:10px;display:block;border-radius:6px;margin:10px 0;overflow-x:auto">CSGO-4aD2k-2yqVd-9X3mG-n7o2Q-zTfRs</code>
-                <button class="copy-btn" onclick="copy(this)">Copy</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="map">
-        <div class="section-title lang zh visible">地图点位教学</div>
-        <div class="section-title lang zh-TW">地圖點位教學</div>
-        <div class="section-title lang en">Map Spots Guide</div>
-        <div class="section-title lang ja">マップポイント解説</div>
-        <div class="section-title lang ko">지도 포인트 가이드</div>
-        <div class="section-title lang es">Guía de Puntos del Mapa</div>
-        <div class="section-title lang fr">Guide des Points de Carte</div>
-        <div class="section-title lang de">Kartenpunkte Guide</div>
-        <div class="section-title lang ru">Гид по точкам карт</div>
-        <div class="section-title lang ar">دليل مواقع الخرائط</div>
-    </section>
-
-    <section id="video">
-        <div class="section-title lang zh visible">视频教程</div>
-        <div class="section-title lang zh-TW">影片教學</div>
-        <div class="section-title lang en">Video Tutorials</div>
-        <div class="section-title lang ja">動画講座</div>
-        <div class="section-title lang ko">영상 튜토리얼</div>
-        <div class="section-title lang es">Tutoriales en Video</div>
-        <div class="section-title lang fr">Tutoriels Vidéo</div>
-        <div class="section-title lang de">Video-Tutorials</div>
-        <div class="section-title lang ru">Видеоуроки</div>
-        <div class="section-title lang ar">دروس فيديو</div>
-    </section>
-
-    <section id="train">
-        <div class="section-title lang zh visible">7 天练枪计划</div>
-        <div class="section-title lang zh-TW">7 天練槍計畫</div>
-        <div class="section-title lang en">7 Days Aim Plan</div>
-        <div class="section-title lang ja">7日間エイム練習</div>
-        <div class="section-title lang ko">7일 조준 훈련 계획</div>
-        <div class="section-title lang es">Plan de Entrenamiento 7 Días</div>
-        <div class="section-title lang fr">Plan d'Entraînement 7 Jours</div>
-        <div class="section-title lang de">7-Tage Trainingsplan</div>
-        <div class="section-title lang ru">7-дневный план тренировки</div>
-        <div class="section-title lang ar">خطة تدريب 7 أيام</div>
-    </section>
-
-    <div class="comment">
-        <h3 class="section-title lang zh visible">玩家交流评论区</h3>
-        <h3 class="section-title lang en">Community Comments</h3>
-        <iframe src="https://comments.betteruptime.com/" height="300" frameborder="0"></iframe>
-    </div>
+<section id="crosshair">
+<div class="section-title lang zh visible">准星代码</div>
+<div class="section-title lang en">Crosshair Codes</div>
+<div class="card">
+<code>CSGO-4aD2k-2yqVd-9X3mG-n7o2Q-zTfRs</code>
+<button class="copy-btn" onclick="copy(this)">Copy</button>
+</div>
+</section>
 </div>
 
 <footer>
-    <div class="container">
-        <p class="lang zh visible">CS2 新手攻略站 © 2025 | 原创内容，侵权必究</p>
-        <p class="lang zh-TW">CS2 新手攻略站 © 2025 | 原創內容，侵權必究</p>
-        <p class="lang en">CS2 Beginner Guide © 2025 All Rights Reserved</p>
-        <p class="lang ja">CS2 初心者ガイド © 2025 著作権所有</p>
-        <p class="lang ko">CS2 초보 가이드 © 2025 모든 권리 보유</p>
-        <p class="lang es">Guía CS2 © 2025 Todos los derechos reservados</p>
-        <p class="lang fr">Guide CS2 © 2025 Tous droits réservés</p>
-        <p class="lang de">CS2-Guide © 2025 Alle Rechte vorbehalten</p>
-        <p class="lang ru">Руководство CS2 © 2025 Все права защищены</p>
-        <p class="lang ar">دليل CS2 © 2025 جميع الحقوق محفوظة</p>
-    </div>
+<p class="lang zh visible">CS2 新手攻略屋 © 2026 Bruce 原创 版权所有</p>
+<p class="lang en">CS2 Beginner House © 2026 Bruce. All Rights Reserved.</p>
 </footer>
 
 <div class="gotop" id="gotop">↑</div>
 
 <script>
-document.onkeydown=function(e){if(e.ctrlKey&&(e.keyCode==67||e.keyCode==85||e.keyCode==83))return false};
-if(window.self!==window.top)window.top.location=window.self.location;
-document.addEventListener('keydown',function(e){if(e.key=='F12')e.preventDefault()});
-
-const browserLang = navigator.language || navigator.userLanguage;
-const langMap = {
-    'zh-CN':'zh','zh-TW':'zh-TW','zh':'zh',
-    'en':'en','ja':'ja','ko':'ko','es':'es','fr':'fr','de':'de','ru':'ru','ar':'ar'
-};
-const defaultLang = langMap[browserLang] || langMap[browserLang.split('-')[0]] || 'en';
-
-const langSelect = document.getElementById('langSelect');
-const allLangEls = document.querySelectorAll('.lang');
-
-function setLanguage(lang){
-    document.documentElement.lang = lang;
-    allLangEls.forEach(el=>{
-        el.classList.remove('visible');
-        if(el.classList.contains(lang)) el.classList.add('visible');
-    });
-    localStorage.setItem('siteLang',lang);
-    langSelect.value = lang;
+// 语言切换
+const ls = document.getElementById('langSelect');
+const all = document.querySelectorAll('.lang');
+function setLang(l){
+all.forEach(e=>e.classList.remove('visible'));
+document.querySelectorAll(`.lang.${l}`).forEach(e=>e.classList.add('visible'));
+localStorage.setItem('lang',l);
+document.documentElement.lang = l;
 }
+const saved = localStorage.getItem('lang') || 'zh';
+setLang(saved);
+ls.addEventListener('change',()=>setLang(ls.value));
 
-const savedLang = localStorage.getItem('siteLang') || defaultLang;
-setLanguage(savedLang);
-
-langSelect.addEventListener('change',()=>{
-    setLanguage(langSelect.value);
-});
-
+// 术语
 const terms = {
-"rush":{"zh":"快速进攻","zh-TW":"快速進攻","en":"Fast push","ja":"突撃","ko":"빠른 돌진","es":"Ataque rápido","fr":"Poussée rapide","de":"Schneller Angriff","ru":"Быстрый натиск","ar":"هجوم سريع"},
-"eco":{"zh":"经济局","zh-TW":"經濟局","en":"Eco round","ja":"エコラウンド","ko":"에코 라운드","es":"Ronda económica","fr":"Round éco","de":"Eco-Runde","ru":"Эко раунд","ar":"جولة اقتصادية"},
-"force":{"zh":"强起局","zh-TW":"強起局","en":"Force buy","ja":"フォースバイ","ko":"강제 구매","es":"Compra forzada","fr":"Achat forcé","de":"Force-Kauf","ru":"Форс бай","ar":"شراء إجباري"}
+"rush":{"zh":"快冲","en":"Fast push"},
+"eco":{"zh":"经济局","en":"Eco round"}
 };
-
-const input=document.getElementById("termInput");
-const result=document.getElementById("termResult");
-input.addEventListener("input",()=>{
-    const val=input.value.trim().toLowerCase();
-    const curLang = document.documentElement.lang;
-    if(terms[val]){
-        let t = terms[val][curLang] || terms[val]['en'];
-        result.innerHTML = `✅ ${val} → ${t}`;
-    }else if(val===""){
-        result.innerHTML = "请输入术语 / Enter slang";
-    }else{
-        result.innerHTML = "❌ 未找到 / Not found";
-    }
+const input = document.getElementById('termInput');
+const res = document.getElementById('termResult');
+input.addEventListener('input',()=>{
+const v = input.value.trim().toLowerCase();
+const l = document.documentElement.lang;
+res.innerHTML = terms[v] ? `${v} → ${terms[v][l]}` : '未找到 | Not found';
 });
 
+// 复制
 function copy(e){
-    const code=e.previousElementSibling.innerText;
-    navigator.clipboard.writeText(code);
-    e.innerText="Copied!";
-    setTimeout(()=>e.innerText="Copy",1000);
+navigator.clipboard.writeText(e.previousElementSibling.innerText);
+e.innerText = 'Copied!';
+setTimeout(()=>e.innerText='Copy',1000);
 }
 
-const gotop=document.getElementById("gotop");
-window.addEventListener("scroll",()=>{gotop.style.display=window.scrollY>400?"flex":"none"});
-gotop.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});
-
-const search=document.getElementById("search");
-search.addEventListener("input",()=>{
-    const val=search.value.toLowerCase();
-    document.querySelectorAll(".card").forEach(card=>{
-        card.style.display=card.innerText.toLowerCase().includes(val)?"block":"none"
-    });
+// 回到顶部
+const gt = document.getElementById('gotop');
+window.addEventListener('scroll',()=>{
+gt.style.display = window.scrollY>300?'flex':'none';
+});
+gt.addEventListener('click',()=>{
+window.scrollTo({top:0,behavior:'smooth'});
 });
 
-if(!localStorage.getItem('visitCount')) localStorage.setItem('visitCount','0');
-let count = parseInt(localStorage.getItem('visitCount')) + 1;
-localStorage.setItem('visitCount',count.toString());
+// 搜索
+document.getElementById('search').addEventListener('input',(e)=>{
+const v = e.target.value.toLowerCase();
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display = c.innerText.toLowerCase().includes(v)?'block':'none';
+});
+});
 </script>
+
+<!-- 统计代码（百度统计） -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?YOUR_ID";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </body>
 </html>
